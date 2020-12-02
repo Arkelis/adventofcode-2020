@@ -1,4 +1,4 @@
-# adventofcode-2020
+# [adventofcode-2020](https://adventofcode.com/2020)
 
 To run day N:
 
