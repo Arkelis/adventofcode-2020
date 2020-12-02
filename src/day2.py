@@ -1,5 +1,5 @@
 with open("inputs/day2.txt", "r") as f:
-    lines = list(iter(f))
+    lines = list(f)
 
 # Part 1
 valids = 0

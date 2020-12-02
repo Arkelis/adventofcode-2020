@@ -1,4 +1,8 @@
 def find_complementary(total, n, numbers):
+    """Find total - n in numbers list.
+    
+    Return result if founded, else False.
+    """
     to_find = total - n
     if to_find in numbers:
         return to_find
