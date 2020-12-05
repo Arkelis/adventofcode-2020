@@ -1,8 +1,3 @@
-with open("inputs/day3.txt", "r") as f:
-    lines = list(f)
-
-# Part 1
-
 def count_trees(slope_right, slope_bottom, lines):
     x = 0
     trees = 0
@@ -12,11 +7,15 @@ def count_trees(slope_right, slope_bottom, lines):
         x += slope_right
     return trees
 
-print("Part 1", count_trees(3, 1, lines))
-print("Part 2", (
-    count_trees(3, 1, lines)
-    * count_trees(1, 1, lines)
-    * count_trees(7, 1, lines)
-    * count_trees(5, 1, lines)
-    * count_trees(1, 2, lines)
-))
+if __name__ == "__main__":
+    with open("inputs/day3.txt", "r") as f:
+        lines = list(f)
+
+    print("Part 1", count_trees(3, 1, lines))
+    print("Part 2", (
+        count_trees(3, 1, lines)
+        * count_trees(1, 1, lines)
+        * count_trees(7, 1, lines)
+        * count_trees(5, 1, lines)
+        * count_trees(1, 2, lines)
+    ))

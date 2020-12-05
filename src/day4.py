@@ -1,6 +1,5 @@
 import re
 
-# utils ---------------------------------------------------------------------------------------------------------------
 def check_passport(parsed_fields, required_fields, valid_data=False):
 	if valid_data:
 		for field, data in parsed_fields.items():
@@ -15,10 +14,6 @@ def check_passport(parsed_fields, required_fields, valid_data=False):
 	return set(parsed_fields) - {"cid"} == set(required_fields)
 
 
-# code ----------------------------------------------------------------------------------------------------------------
-with open("inputs/day4.txt", "r") as f:
-    lines = list(f)
-
 required_fields = {
     "byr": lambda data: 1920 <= int(data) <= 2002,
     "iyr": lambda data: 2010 <= int(data) <= 2020,
@@ -31,28 +26,32 @@ required_fields = {
     "pid": lambda data: len(data) == 9 and all(n.isdigit() for n in data),
 }
 
-# Part 1
-parsed_fields = []
-valids = 0
-for line in lines + ["\n"]:
-	if line == "\n":
-		valids += check_passport(parsed_fields, required_fields)
-		parsed_fields = []
-		continue
-	for match in re.finditer(r"[a-zA-Z]{3}:", line):
-		parsed_fields.append(match.group(0)[:3])
+if __name__ == "__main__":
+	with open("inputs/day4.txt", "r") as f:
+		lines = list(f)
 
-print("Part 1", valids)
+	# Part 1
+	parsed_fields = []
+	valids = 0
+	for line in lines + ["\n"]:
+		if line == "\n":
+			valids += check_passport(parsed_fields, required_fields)
+			parsed_fields = []
+			continue
+		for match in re.finditer(r"[a-zA-Z]{3}:", line):
+			parsed_fields.append(match.group(0)[:3])
 
-# Part 2
-parsed_fields = {}
-valids = 0
-for line in lines + ["\n"]:
-	if line == "\n":
-		valids += check_passport(parsed_fields, required_fields, valid_data=True)
-		parsed_fields = {}
-		continue
-	for match in re.finditer(r"([a-zA-Z]{3}):(#?\w*)", line):
-		parsed_fields[match.group(1)[:3]] = match.group(2)
+	print("Part 1", valids)
 
-print("Part 2", valids)
+	# Part 2
+	parsed_fields = {}
+	valids = 0
+	for line in lines + ["\n"]:
+		if line == "\n":
+			valids += check_passport(parsed_fields, required_fields, valid_data=True)
+			parsed_fields = {}
+			continue
+		for match in re.finditer(r"([a-zA-Z]{3}):(#?\w*)", line):
+			parsed_fields[match.group(1)[:3]] = match.group(2)
+
+	print("Part 2", valids)
