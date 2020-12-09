@@ -1,7 +1,8 @@
 from collections import deque
 
 
-def find_first_wrong(preamble, numbers):
+# this was used for submitting result
+def old_find_first_wrong(preamble, numbers):
     previous_numbers = deque(preamble, maxlen=25)
     sums = {n + m for n in previous_numbers for m in previous_numbers if n != m}
     for n in numbers:
@@ -10,6 +11,15 @@ def find_first_wrong(preamble, numbers):
         previous_numbers.append(n)
         sums = {n + m for n in previous_numbers for m in previous_numbers if n != m}
 
+
+# optimized after
+def find_first_wrong(preamble, numbers):
+    from day1 import find_complementary
+    previous_numbers = deque(preamble, maxlen=25)
+    for n in numbers:
+        if not any(find_complementary(n, prev, previous_numbers) for prev in previous_numbers):
+            return n
+        previous_numbers.append(n)
 
 def find_contigous_sum_for(number, numbers):
     contigous_sum = 0
