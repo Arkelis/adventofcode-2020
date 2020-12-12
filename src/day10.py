@@ -15,8 +15,8 @@ def find_differences(joltages):
     return diffs
 
 
-def find_arrangements(joltages):
-    """Find arrangements for reaching device joltage
+def find_arrangements_count(joltages):
+    """Find arrangements count for reaching device joltage
 
     To do this, count for each adapter the numbers of ways to reach them.
 
@@ -66,4 +66,4 @@ if __name__ == "__main__":
         joltages = list(map(int, f))
     diffs = find_differences(joltages)
     print("Part 1:", diffs[1] * diffs[3])
-    print("Part 2:", find_arrangements(tuple(sorted(set(joltages)))))
+    print("Part 2:", find_arrangements_count(tuple(sorted(set(joltages)))))
