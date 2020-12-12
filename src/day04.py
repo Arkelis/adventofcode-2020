@@ -27,7 +27,7 @@ required_fields = {
 }
 
 if __name__ == "__main__":
-	with open("inputs/day4.txt", "r") as f:
+	with open("inputs/day04.txt", "r") as f:
 		lines = list(f)
 
 	# Part 1

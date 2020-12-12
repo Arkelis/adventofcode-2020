@@ -35,7 +35,7 @@ def find_contigous_sum_for(number, numbers):
 
 
 if __name__ == "__main__":
-    with open("inputs/day9.txt", "r") as f:
+    with open("inputs/day09.txt", "r") as f:
         lines = list(f)
     preamble, numbers = tuple(map(int, lines[:25])), tuple(map(int, lines[25:]))
     first_wrong = find_first_wrong(preamble, numbers)

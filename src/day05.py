@@ -21,7 +21,7 @@ def find_my_id(ids):
             return seat + 1
 
 if __name__ == "__main__":
-    with open("inputs/day5.txt", "r") as f:
+    with open("inputs/day05.txt", "r") as f:
         lines = list(f)
     ids = make_ids(lines)
     print("Part 1:", max(ids))

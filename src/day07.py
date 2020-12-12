@@ -28,7 +28,7 @@ def find_number_of_bags_in(container, lines):
 
 
 if __name__ == "__main__":
-    with open("inputs/day7.txt", "r") as f:
+    with open("inputs/day07.txt", "r") as f:
         lines = list(f)
     print("Part 1:", len(find_bags_containing("shiny gold", lines)))
     print("Part 2:", find_number_of_bags_in("shiny gold", lines))

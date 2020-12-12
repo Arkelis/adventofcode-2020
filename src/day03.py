@@ -8,7 +8,7 @@ def count_trees(slope_right, slope_bottom, lines):
     return trees
 
 if __name__ == "__main__":
-    with open("inputs/day3.txt", "r") as f:
+    with open("inputs/day03.txt", "r") as f:
         lines = list(f)
 
     print("Part 1", count_trees(3, 1, lines))

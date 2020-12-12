@@ -6,7 +6,7 @@ def find_complementary(total, n, numbers):
 
 if __name__ == "__main__":
     # Part 1
-    with open("inputs/day1.txt", "r") as f:
+    with open("inputs/day01.txt", "r") as f:
         numbers = list(map(int, f))
 
     for n in numbers:

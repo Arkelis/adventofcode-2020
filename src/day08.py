@@ -40,7 +40,7 @@ def compute_fixed_acc(lines):
 
 
 if __name__ == "__main__":
-    with open("inputs/day8.txt", "r") as f:
+    with open("inputs/day08.txt", "r") as f:
         lines = list(f)
     print("Part 1:", compute_acc(lines)[1])
     print("Part 2:", compute_fixed_acc(lines))

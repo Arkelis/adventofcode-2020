@@ -1,4 +1,4 @@
-with open("inputs/day2.txt", "r") as f:
+with open("inputs/day02.txt", "r") as f:
     lines = list(f)
 
 # Part 1
